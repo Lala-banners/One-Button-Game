@@ -145,58 +145,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 145133509}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15, y: -1.18, z: -0.080078125}
+  m_LocalPosition: {x: -15, y: -1.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &234396511
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 234396513}
-  - component: {fileID: 234396512}
-  m_Layer: 0
-  m_Name: FIREBALL
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &234396512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 234396511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97229740dabd81942b6364b1dc619769, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 1817712335}
-  fireball: {fileID: 1332169908477593462, guid: c122a7cb0e6253648b18203cbd62ae7e,
-    type: 3}
-  fireRate: 2
---- !u!4 &234396513
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 234396511}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.1216884, y: -1.3908311, z: -1.0585938}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &288633521
 GameObject:
@@ -2876,8 +2829,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.069999695, y: 1.08, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 0}
-  m_Children:
-  - {fileID: 1817712336}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2972,13 +2924,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5376a82e704c7840b3b12b3d19e0c21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePoint: {fileID: 1817712336}
-  fireballSpeed: 40
-  moveSpeed: 15
-  flip: {x: 0, y: 0}
-  attackRange: {fileID: 669358810}
-  enemyCollider: {fileID: 6780424403378981658, guid: 217e577bf97bd5542b38489c4689f768,
+  dragon: {fileID: 669358809}
+  attackRange: 10
+  dragonCollider: {fileID: 669358810}
+  knightCollider: {fileID: 6780424403378981658, guid: 217e577bf97bd5542b38489c4689f768,
     type: 3}
+  firePoint: {fileID: 1817712335}
+  fireball: {fileID: 1332169908477593462, guid: c122a7cb0e6253648b18203cbd62ae7e,
+    type: 3}
+  fireRate: 2
 --- !u!1 &904910382
 GameObject:
   m_ObjectHideFlags: 0
@@ -3114,12 +3068,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1817712335}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.66, y: -0.63, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.9100003, y: -3.54, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 0}
   m_Children: []
-  m_Father: {fileID: 669358809}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1981751258
 GameObject:
@@ -3146,7 +3100,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1981751258}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15, y: -1.11, z: -0.080078125}
+  m_LocalPosition: {x: 15, y: -1.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3168,7 +3122,7 @@ MonoBehaviour:
     type: 3}
   spawnLeft: {fileID: 145133509}
   spawnRight: {fileID: 1981751258}
-  spawnRate: 5
+  spawnRate: 1
   nextSpawn: 3
 --- !u!1 &2069154476
 GameObject:
