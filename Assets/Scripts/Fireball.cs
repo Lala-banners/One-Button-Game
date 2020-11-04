@@ -5,39 +5,35 @@ using UnityEngine;
 public class Fireball : MonoBehaviour
 {
     public float movementSpeed = 10f;
-
-    public void FlipFireball()
+    private SpriteRenderer spriteRenderer;
+    private void Start()
     {
-        transform.Translate(Input.GetAxis("Horizontal") * Time.deltaTime, 0f, 0f);
-
-        //Flip fireball to the left
-        Vector3 fireScale = transform.localScale;
-        if (Input.GetAxis("Horizontal") < 0)
-        {
-            fireScale.x = -4f;
-        }
-
-        //Flip fireball to the right
-        if (Input.GetAxis("Horizontal") > 0)
-        {
-            fireScale.x = 4f;
-        }
-        transform.localScale = fireScale;
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
-        FlipFireball();
+       
         transform.position += transform.right * Time.deltaTime * movementSpeed; //make fireball move
+        // If no longer visible
+        if (!spriteRenderer.isVisible)
+        {
+            // Destroy Bullet
+            Destroy(gameObject);
+        }
+
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    // OnTriggerEnter2D is called when the Collider2D other enters the trigger (2D physics only)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         //Check if object has enemy script attached
         if (collision.gameObject.TryGetComponent<KnightMovement>(out KnightMovement knight))
         {
             //Destroy knight
             Destroy(collision.gameObject);
+            // Destroy the Bullet
+            Destroy(gameObject);
         }
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PointAndShoot : MonoBehaviour
+public class Crosshairs : MonoBehaviour
 {
     public GameObject crosshairs;
     private Vector3 target; //target of shooting
