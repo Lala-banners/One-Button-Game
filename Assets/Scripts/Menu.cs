@@ -9,6 +9,10 @@ public class Menu : MonoBehaviour
     public GameObject main;
 
     #region Functions
+    private void Awake()
+    {
+        main.SetActive(true);
+    }
 
     private void Update()
     {
@@ -23,16 +27,16 @@ public class Menu : MonoBehaviour
             //stop time and make main menu appear
             Time.timeScale = 0;
             main.SetActive(true);
+            Cursor.visible = true;
         }
         else if(main.activeSelf == false)
         {
             //If main menu not active then time is normal
             Time.timeScale = 1;
+            Cursor.visible = false;
         }
-        
     }
     
-
     public void QuitGame()
     {
         #if UNITY_EDITOR
