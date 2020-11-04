@@ -10,9 +10,9 @@ public class Menu : MonoBehaviour
     public GameObject main;
 
     #region Functions
-    private void Awake()
+    public void ChangeScene(int sceneIndex)
     {
-        main.SetActive(true);
+        SceneManager.LoadScene(sceneIndex);
     }
 
     private void Update()
