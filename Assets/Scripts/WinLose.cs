@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class WinLose : MonoBehaviour
 {
-    public int knightsKilled = 0; //int for how many knights have been killed
+    public static int knightsKilled = 0; //int for how many knights have been killed
     public Text killCount; //text for how many knights have been killed
     public GameObject winScreen, gameOver;
 
@@ -23,12 +23,6 @@ public class WinLose : MonoBehaviour
         }
     }
 
-    public void ScoreHolder() 
-    {
-        knightsKilled++;
-        killCount.text = "Knights Killed:  " + killCount;
-    }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +32,7 @@ public class WinLose : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ScoreHolder();
+        killCount.text = "Kill Count: " + knightsKilled;
         Win();
     }
 }

@@ -30,6 +30,7 @@ public class Fireball : MonoBehaviour
         //Check if object has enemy script attached
         if (collision.gameObject.TryGetComponent<KnightMovement>(out KnightMovement knight))
         {
+            WinLose.knightsKilled += 1; //When 1 knight dies, add to text
             //Destroy knight
             Destroy(collision.gameObject);
             // Destroy the Bullet
