@@ -5,7 +5,7 @@ using UnityEngine;
 public class Dragon : MonoBehaviour
 { 
     [Tooltip("Where the fireball will shoot from.")]
-    public Transform firePoint;
+    public GameObject firePoint;
 
     [Tooltip("The fireball prefab.")]
     public GameObject fireball;
@@ -38,27 +38,18 @@ public class Dragon : MonoBehaviour
 
     public void ShootFireball() //Function to set the mouse as the one button
     {
-        //If mouse click then flip x position to left or right.
+        //If mouse click then shoot fireball where the mouse is pointing
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Instantiate<GameObject>(fireball, firePoint.transform.position, Quaternion.Euler(Input.mousePosition.x, Input.mousePosition.y, transform.position.z));
+            Instantiate<GameObject>(fireball, transform.position, Quaternion.Euler(Input.mousePosition.x, Input.mousePosition.y, transform.position.z));
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        Movement();
+        
         ShootFireball();
+        Movement();
     }
 }
-
-/*private void OnTriggerEnter2D(Collider2D collision)
-{
-   //Check if object has enemy script attached
-   if (collision.gameObject.TryGetComponent<KnightMovement>(out KnightMovement knight))
-   {
-        //Destroy knight
-        Destroy(collision.gameObject);
-   }
-}*/

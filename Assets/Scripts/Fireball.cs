@@ -14,21 +14,21 @@ public class Fireball : MonoBehaviour
         Vector3 fireScale = transform.localScale;
         if (Input.GetAxis("Horizontal") < 0)
         {
-            fireScale.x = -2.7f;
+            fireScale.x = -4f;
         }
 
         //Flip fireball to the right
         if (Input.GetAxis("Horizontal") > 0)
         {
-            fireScale.x = 2.7f;
+            fireScale.x = 4f;
         }
         transform.localScale = fireScale;
     }
 
     void Update()
     {
-        //FlipFireball();
-        transform.position += transform.right * Time.deltaTime * movementSpeed;
+        FlipFireball();
+        transform.position += transform.right * Time.deltaTime * movementSpeed; //make fireball move
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
