@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Dragon : MonoBehaviour
-{
-    public Transform dragon;
-
+{ 
     [Tooltip("Where the fireball will shoot from.")]
-    public GameObject firePoint;
+    public Transform firePoint;
 
     [Tooltip("The fireball prefab.")]
     public GameObject fireball;
@@ -35,40 +33,18 @@ public class Dragon : MonoBehaviour
         transform.localScale = dragonScale;
     }
 
-    
-    /*private void OnTriggerEnter2D(Collider2D collision)
-    {
-       //Check if object has enemy script attached
-       if (collision.gameObject.TryGetComponent<KnightMovement>(out KnightMovement knight))
-       {
-            //Destroy knight
-            Destroy(collision.gameObject);
-       }
-    }*/
-
     //direction from a to b
     // x = b-a
 
-    
-    
-
-    public void ShootFireball() //Function to set the space bar as the one button
+    public void ShootFireball() //Function to set the mouse as the one button
     {
-        //If space bar pressed then flip x position to left or right.
-        if (Input.GetKeyDown(KeyCode.Space))
+        //If mouse click then flip x position to left or right.
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Instantiate<GameObject>(fireball, firePoint.transform.position, Quaternion.identity);
-
-            //if fireball collides with soldier box collider then destroy
-           
-
-            //Rotate fire point to face enemy with the player
-            //firePoint.transform.rotation.x
-
-            //Clone the fireball prefab and spawn from dragon mouth, then rotate with dragon.
-            //Instantiate(fireball, firePoint, dragon movement dragonScale);
+            Instantiate<GameObject>(fireball, firePoint.transform.position, Quaternion.Euler(Input.mousePosition.x, Input.mousePosition.y, transform.position.z));
         }
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -76,3 +52,13 @@ public class Dragon : MonoBehaviour
         ShootFireball();
     }
 }
+
+/*private void OnTriggerEnter2D(Collider2D collision)
+{
+   //Check if object has enemy script attached
+   if (collision.gameObject.TryGetComponent<KnightMovement>(out KnightMovement knight))
+   {
+        //Destroy knight
+        Destroy(collision.gameObject);
+   }
+}*/
