@@ -1,19 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
+
 
 public class Dragon : MonoBehaviour
 {
-    [Tooltip("Where the fireball will shoot from.")]
-    public Transform firePoint;
+   
+        [Tooltip("Where the fireball will shoot from.")]
+        public Transform firePoint;
 
-    [Tooltip("The fireball prefab.")]
-    public GameObject fireball;
+        [Tooltip("The fireball prefab.")]
+        public GameObject fireball;
 
-    [Tooltip("How fast the fireball shoots.")]
-    public float fireRate = 2f;
+        [Tooltip("How fast the fireball shoots.")]
+        public float fireRate = 2f;
+
+       
+        
+    
 
     private SpriteRenderer spriteRenderer;
+   
 
     // Start is called just before any of the Update methods is called the first time
     private void Start()
