@@ -14,7 +14,7 @@ public class Spawner : MonoBehaviour
     public GameObject spawnRight;
 
     [Tooltip("How fast the enemies spawn.")]
-    public float spawnRate = 2f;
+    public float spawnRate = 0.5f;
 
     [Tooltip("Time between each enemy spawn.")]
     public float nextSpawn = 0f;
@@ -36,7 +36,7 @@ public class Spawner : MonoBehaviour
         if (Time.time > nextSpawn)
         {
             nextSpawn = Time.time + spawnRate;
-            randomX = Random.Range(-15f, 15f); //X positions of left and right of the game scene
+            randomX = Random.Range(-7f, 7f); //X positions of left and right of the game scene
             spawnPoint = new Vector2(randomX, transform.position.y);
             Instantiate(soldiers, spawnPoint, Quaternion.identity); //Quaternion.identity means soldiers at the spawn point have no rotation
         }
