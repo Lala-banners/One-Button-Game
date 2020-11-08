@@ -12,12 +12,10 @@ GameObject:
   - component: {fileID: 7011195395167869589}
   - component: {fileID: 6780424403378981657}
   - component: {fileID: 6780424403378981658}
-  - component: {fileID: 6780424403378981655}
-  - component: {fileID: 6780424403378981656}
   - component: {fileID: 5868921361314526028}
   m_Layer: 9
   m_Name: Knight
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,38 +131,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0648503, y: 1.3852444}
   m_EdgeRadius: 0
---- !u!58 &6780424403378981655
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7011195395167869590}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.19, y: -1.14}
-  serializedVersion: 2
-  m_Radius: 0.091243185
---- !u!58 &6780424403378981656
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7011195395167869590}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.06, y: -1.14}
-  serializedVersion: 2
-  m_Radius: 0.091243185
 --- !u!114 &5868921361314526028
 MonoBehaviour:
   m_ObjectHideFlags: 0

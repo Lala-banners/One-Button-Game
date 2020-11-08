@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class WinLose : MonoBehaviour
@@ -10,16 +8,22 @@ public class WinLose : MonoBehaviour
     public Text killCount; //text for how many knights have been killed
 
     public GameObject winScreen, gameOver;
-    private Dragon dStats;
-    public float currentHealth;
-    public float maxHealth;
-    public Slider healthBar;
+    public Dragon player;
 
-    void TakeDamage(float damage)
+    // Start is called before the first frame update
+    void Start()
     {
-        currentHealth = currentHealth - damage;
-        healthBar.value = currentHealth;
+        
     }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+        killCount.text = "Kill Count: " + knightsKilled;
+        Win();
+    }
+
 
     public void Win()
     {
@@ -29,7 +33,7 @@ public class WinLose : MonoBehaviour
             Time.timeScale = 0;
             winScreen.SetActive(true);   
         }
-        else if (currentHealth <= 0)
+        else if (player.currentHealth <= 0) //else if dragon health is 0 then game over
         {
             gameOver.SetActive(true);
             winScreen.SetActive(false);
@@ -37,21 +41,6 @@ public class WinLose : MonoBehaviour
 
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        if (Input.GetKeyDown(KeyCode.Space)) //Precursor to if soldiers come into a range of dragon then take damage
-        {
-            TakeDamage(10f);
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        killCount.text = "Kill Count: " + knightsKilled;
-        Win();
-    }
 }
 
 

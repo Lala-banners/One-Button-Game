@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
-
 
 
 public class Dragon : MonoBehaviour
@@ -17,9 +14,13 @@ public class Dragon : MonoBehaviour
         [Tooltip("How fast the fireball shoots.")]
         public float fireRate = 2f;
 
-       
-        
-    
+    public float currentHealth = 100f;
+    public float maxHealth = 100f;
+    public Slider healthBar;
+    public Image fill;
+    public Gradient gradient;
+
+
 
     private SpriteRenderer spriteRenderer;
    
@@ -28,7 +29,28 @@ public class Dragon : MonoBehaviour
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        currentHealth = maxHealth;
+        healthBar.maxValue = maxHealth;
+        healthBar.value = maxHealth;
     }
+
+    private void OnCollisionEnter2D(Collision2D playerCollider)
+    {
+        if (playerCollider.gameObject.tag == "Enemy") //if collided with an enemy
+        {
+            TakeDamage(20f); //Dragon take damage
+            //Debug.Log("collision!");
+        }
+    }
+
+    void TakeDamage(float damage)
+    {
+        currentHealth = currentHealth - damage;
+        healthBar.value = currentHealth;
+        fill.color = gradient.Evaluate(healthBar.normalizedValue);
+    }
+
+
 
     /// <summary>
     /// Flip the Sprite every time it's called
